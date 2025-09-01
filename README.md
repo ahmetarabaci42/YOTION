@@ -76,5 +76,28 @@ You can add as many as you like depending on what you are currently working on.
 Each language includes a **name**, **code**, and **flag emoji** so you can better organize your vocabulary notes.
 
 ### Screenshots
-![Languages Overview](./6475f1dd-3d63-4fc0-a004-8161a4e6f7d4.png)
-![Add Language Form](./b22b5007-3cfb-40b6-9f0f-f0dcec51a998.png)
+<img width="1596" height="703" alt="Languages" src="https://github.com/user-attachments/assets/5b6dcf2a-2f1e-4251-b4f9-003b6281b55c" />
+
+<img width="1567" height="885" alt="Languages2" src="https://github.com/user-attachments/assets/5ff7989a-bbe1-48d0-a311-cd0055097dc5" />
+
+
+## 📘 Vocabulary Section
+
+This is where you can manage the words of the language you are studying.  
+All added words appear here with their translations and difficulty levels.
+
+### Screenshot
+<img width="1595" height="965" alt="Vocabulary2" src="https://github.com/user-attachments/assets/75728f5f-fedc-4ec7-977d-3b95c2011265" />
+
+
+---
+
+### ➕ Adding a New Word
+
+From this view you can add new words into your vocabulary list.  
+Besides the **Word** and **Translation**, you also have optional fields for **Pronunciation** and **Example Sentence**.  
+Each word can be assigned a **Difficulty Level** (e.g., Beginner, Intermediate, Advanced).
+
+### Screenshot
+<img width="1587" height="850" alt="Vacabulary1" src="https://github.com/user-attachments/assets/494f96d4-4705-4e68-a208-acbbeb91c8bf" />
+
