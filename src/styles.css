@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-notion-border p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-3 py-2 rounded-md text-sm font-medium text-notion-text hover:bg-notion-hover transition-colors duration-150;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-notion-accent text-white hover:bg-notion-accent;
+  }
+  
+  .btn-primary {
+    @apply bg-notion-accent text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-150 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-notion-text border border-notion-border px-4 py-2 rounded-md hover:bg-notion-hover transition-colors duration-150 font-medium;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-notion-border rounded-md focus:outline-none focus:ring-2 focus:ring-notion-accent focus:border-transparent;
+  }
+}
