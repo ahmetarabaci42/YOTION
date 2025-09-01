@@ -101,3 +101,25 @@ Each word can be assigned a **Difficulty Level** (e.g., Beginner, Intermediate, 
 ### Screenshot
 <img width="1587" height="850" alt="Vacabulary1" src="https://github.com/user-attachments/assets/494f96d4-4705-4e68-a208-acbbeb91c8bf" />
 
+
+## 🃏 Flashcards Section
+
+The Flashcards feature helps you review your vocabulary in an interactive way.  
+Each session presents a word or phrase, and you try to recall the answer before revealing it.  
+This method supports spaced repetition and makes memorization more effective.
+
+### Screenshots
+<img width="1602" height="631" alt="FlashCards1" src="https://github.com/user-attachments/assets/1c3dcd1a-2c2e-4c6d-93c2-9b17d8857676" />
+
+<img width="1601" height="727" alt="FlashCards2" src="https://github.com/user-attachments/assets/e42e8b01-cb48-4469-a93a-21b92aecd959" />
+
+
+---
+
+### 🔄 Review Flow
+
+- When a card appears, try to recall the translation or meaning.  
+- Click **Show Answer** to reveal the solution.  
+- After seeing the answer, you can grade your response as **Hard**, **Good**, or **Easy**.  
+- The system adjusts the review schedule based on your choice, making difficult words appear more often while mastered words appear less frequently.
+
