@@ -1,17 +1,19 @@
+<a id="en"></a>
+
 <p align="center">
   <img width="430" height="297" alt="Logo1" src="https://github.com/user-attachments/assets/3e436d21-771c-41da-8279-9974fe2a618f" />
 </p>
-
 <h1 align="center">YOTION</h1>
 
 <p align="center">
-  Notion'dan ilham alan, <b>React + Tauri</b> ile geliştirilmiş açık kaynak masaüstü uygulaması.  
-  Web üzerinde çalışır ve Windows, macOS, Linux için hafif bir masaüstü uygulaması olarak paketlenebilir.
+  A desktop application inspired by <b>Notion</b>, built with <b>React + Tauri</b>.<br/>
+  Runs on the web during development and ships as a lightweight desktop app for Windows, macOS, and Linux.
 </p>
 
 <p align="center">
   <a href="#tr">🇹🇷 Türkçe</a> • <a href="#en">🇬🇧 English</a>
 </p>
+
 
 ## 🚀 Features
 
@@ -271,20 +273,23 @@ You can add a **title**, **content**, and optional **tags** to organize your not
 ---
 
 ---
+
+<a id="tr"></a>
+
 <p align="center">
   <img width="430" height="297" alt="Logo1" src="https://github.com/user-attachments/assets/3e436d21-771c-41da-8279-9974fe2a618f" />
 </p>
-
 <h1 align="center">YOTION</h1>
 
 <p align="center">
-  Notion'dan ilham alan, <b>React + Tauri</b> ile geliştirilmiş açık kaynak masaüstü uygulaması.  
+  Notion'dan ilham alan, <b>React + Tauri</b> ile geliştirilmiş açık kaynak masaüstü uygulaması.<br/>
   Web üzerinde çalışır ve Windows, macOS, Linux için hafif bir masaüstü uygulaması olarak paketlenebilir.
 </p>
 
 <p align="center">
   <a href="#tr">🇹🇷 Türkçe</a> • <a href="#en">🇬🇧 English</a>
 </p>
+
 
 ## 🚀 Özellikler
 
