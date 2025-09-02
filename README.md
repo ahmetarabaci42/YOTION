@@ -268,6 +268,9 @@ You can add a **title**, **content**, and optional **tags** to organize your not
 ---
 
 ---
+<p align="right">
+  <a href="#tr">🇹🇷 TR</a> · <a href="#en">🇬🇧 EN</a>
+</p>
 
 <a id="tr"></a>
 # YOTION
