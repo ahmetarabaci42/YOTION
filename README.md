@@ -6,7 +6,7 @@
 <a id="en"></a>
 # YOTION
 
-A Notion‑inspired desktop app powered by **React + Tauri**. Runs on the web during development and ships as a lightweight desktop app for Windows, macOS, and Linux.
+A desktop note-taking application inspired by Notion, supported by React + Tauri. It runs on the web during development and is offered as a lightweight desktop application for Windows, macOS, and Linux.
 
 ---
 
@@ -273,7 +273,7 @@ You can add a **title**, **content**, and optional **tags** to organize your not
 # YOTION
 
 
-**React + Tauri** tarafından desteklenen, Notion'dan ilham alan bir masaüstü uygulaması. Geliştirme sırasında web üzerinde çalışır ve Windows, macOS ve Linux için hafif bir masaüstü uygulaması olarak sunulur.
+**React + Tauri** tarafıyla desteklenen, Notion'dan ilham alan bir masaüstü not alma uygulaması. Geliştirme sırasında web üzerinde çalışır ve Windows, macOS ve Linux için hafif bir masaüstü uygulaması olarak sunulur.
 
 ---
 
