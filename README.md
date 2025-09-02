@@ -1,3 +1,9 @@
+<p align="right">
+  <a href="./README.en.md"><img alt="English" src="https://img.shields.io/badge/EN-English-blue"></a>
+  <a href="./README.tr.md"><img alt="Türkçe" src="https://img.shields.io/badge/TR-T%C3%BCrk%C3%A7e-red"></a>
+</p>
+
+
 # YOTION
 
 A Notion‑inspired desktop app powered by **React + Tauri**. Runs on the web during development and ships as a lightweight desktop app for Windows, macOS, and Linux.
