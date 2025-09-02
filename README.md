@@ -171,3 +171,92 @@ For example, one space can hold C++ code snippets, another for hardware schemati
 <img width="1596" height="973" alt="TechNotes5" src="https://github.com/user-attachments/assets/c0dbfba3-e95f-4634-aff9-00ca846a6fc7" />
 
 
+## 📂 Projects & Tasks Section
+
+This section is mainly for managing projects and assigning tasks.  
+It is kept simple to quickly create projects and add related tasks.
+
+---
+
+### Projects Overview
+This area shows all existing projects.  
+Each project card contains its **status**, **priority**, and start/end dates.
+
+📷 Example:  
+<img width="1595" height="720" alt="Projects1" src="https://github.com/user-attachments/assets/e3f4e214-ca50-4d92-834e-ed362b41b534" />
+
+
+---
+
+### Creating a Project
+From this view you can create a new project by entering a **name**, **description**, choosing **status**, **priority**, and setting start/end dates.
+
+📷 Example:  
+<img width="561" height="640" alt="Projects2" src="https://github.com/user-attachments/assets/e32fc42d-d2ab-4e6b-93fd-883d2a79af5d" />
+
+
+---
+
+### Project Tasks
+Inside a selected project you can view all tasks related to it.  
+Each task shows its title, description, due date, status, and priority.
+
+📷 Example:  
+<img width="1597" height="682" alt="Projects3" src="https://github.com/user-attachments/assets/685aabfb-7227-43f1-bf16-e28536619c6d" />
+
+
+---
+
+### Creating a Task
+This form allows you to create a new task under a selected project.  
+You can provide a **title**, **description**, choose **status**, **priority**, and a **due date**.
+
+📷 Example:  
+<img width="557" height="641" alt="Projects4" src="https://github.com/user-attachments/assets/f2a23abd-4e31-4314-9fb2-864baf568808" />
+
+
+
+## 🗓️ Planner Section
+
+This module works like a simple calendar where you can create events and daily notes for specific dates.  
+It allows you to plan your schedule and keep track of daily activities.
+
+---
+
+### Calendar Overview
+This is the main view of the planner.  
+Here you can see the calendar and any events assigned to the selected date.
+
+📷 Example:  
+<img width="1538" height="817" alt="Planner1" src="https://github.com/user-attachments/assets/59da8b88-b2ca-41bb-83b0-a25372652ef1" />
+
+
+---
+
+### Creating an Event
+From this form you can create a new event for the selected date.  
+Each event can have a **title**, **description**, **start/end time**, **type**, and **priority**.
+
+📷 Example:  
+<img width="556" height="642" alt="Planner2" src="https://github.com/user-attachments/assets/5b2fd185-75d6-4266-94b8-64f2ac451948" />
+
+
+---
+
+### Daily Notes
+This section shows all notes assigned to the selected day.  
+It’s useful for writing reminders or short logs specific to that date.
+
+📷 Example:  
+<img width="1596" height="710" alt="Planner3" src="https://github.com/user-attachments/assets/d5d74639-4ca8-4dc4-a01f-f3cb2cdb15e5" />
+
+
+---
+
+### Creating a Daily Note
+From this form you can create a new daily note for the selected date.  
+You can add a **title**, **content**, and optional **tags** to organize your notes.
+
+📷 Example:  
+<img width="837" height="680" alt="Planner4" src="https://github.com/user-attachments/assets/ee530643-edf8-4187-a500-95a58c8c7b60" />
+
