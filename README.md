@@ -1,4 +1,4 @@
-# Yotion
+# YOTION
 
 A Notion‑inspired desktop app powered by **React + Tauri**. Runs on the web during development and ships as a lightweight desktop app for Windows, macOS, and Linux.
 
@@ -122,4 +122,52 @@ This method supports spaced repetition and makes memorization more effective.
 - Click **Show Answer** to reveal the solution.  
 - After seeing the answer, you can grade your response as **Hard**, **Good**, or **Easy**.  
 - The system adjusts the review schedule based on your choice, making difficult words appear more often while mastered words appear less frequently.
+
+
+## 📝 Tech Notes Section
+
+The **Tech Notes** feature allows you to organize your technical knowledge under different spaces and snippets.
+
+---
+
+### Spaces Overview
+This area lets you create separate spaces for different topics.  
+You can think of each space as a folder where you will group your related notes.  
+
+📷 Example:  
+<img width="1601" height="671" alt="TechNotes1" src="https://github.com/user-attachments/assets/daf9ce95-636f-4d5a-93a3-020af90bca1b" />
+
+
+---
+
+### Inside a Space
+When you open a space, you can view all snippets that belong to it.  
+Each snippet contains a title, description, and optionally code examples.  
+
+📷 Example:  
+<img width="1571" height="982" alt="TechNotes2" src="https://github.com/user-attachments/assets/2a80c7c8-ef1d-4b15-a9c8-09a822be8ea9" />
+
+
+---
+
+### Creating a Snippet
+This view allows you to add new snippets into a space.  
+You can provide a **title**, **description**, select a **language**, and write your code or notes.  
+This makes it easy to organize reusable code snippets or quick references.  
+
+📷 Example:  
+<img width="847" height="977" alt="TechNotes3" src="https://github.com/user-attachments/assets/e9b3a030-4d1c-4add-b92a-7804a4c9a74f" />
+
+
+---
+
+### Multiple Spaces Example
+You can switch between different spaces to manage notes in various categories.  
+For example, one space can hold C++ code snippets, another for hardware schematics, and another for Rust.  
+
+📷 Examples:  
+<img width="1600" height="557" alt="TechNotes4" src="https://github.com/user-attachments/assets/75a1e46b-1b09-4ac5-83ef-78a5ca67658a" />
+  
+<img width="1596" height="973" alt="TechNotes5" src="https://github.com/user-attachments/assets/c0dbfba3-e95f-4634-aff9-00ca846a6fc7" />
+
 
