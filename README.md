@@ -1,14 +1,17 @@
-<p align="right">
-  <a href="#tr">🇹🇷 TR</a> · <a href="#en">🇬🇧 EN</a>
+<p align="center">
+  <img width="430" height="297" alt="Logo1" src="https://github.com/user-attachments/assets/3e436d21-771c-41da-8279-9974fe2a618f" />
 </p>
 
+<h1 align="center">YOTION</h1>
 
-<a id="en"></a>
-# YOTION
+<p align="center">
+  Notion'dan ilham alan, <b>React + Tauri</b> ile geliştirilmiş açık kaynak masaüstü uygulaması.  
+  Web üzerinde çalışır ve Windows, macOS, Linux için hafif bir masaüstü uygulaması olarak paketlenebilir.
+</p>
 
-A desktop note-taking application inspired by Notion, supported by React + Tauri. It runs on the web during development and is offered as a lightweight desktop application for Windows, macOS, and Linux.
-
----
+<p align="center">
+  <a href="#tr">🇹🇷 Türkçe</a> • <a href="#en">🇬🇧 English</a>
+</p>
 
 ## 🚀 Features
 
@@ -268,17 +271,20 @@ You can add a **title**, **content**, and optional **tags** to organize your not
 ---
 
 ---
-<p align="right">
-  <a href="#tr">🇹🇷 TR</a> · <a href="#en">🇬🇧 EN</a>
+<p align="center">
+  <img width="430" height="297" alt="Logo1" src="https://github.com/user-attachments/assets/3e436d21-771c-41da-8279-9974fe2a618f" />
 </p>
 
-<a id="tr"></a>
-# YOTION
+<h1 align="center">YOTION</h1>
 
+<p align="center">
+  Notion'dan ilham alan, <b>React + Tauri</b> ile geliştirilmiş açık kaynak masaüstü uygulaması.  
+  Web üzerinde çalışır ve Windows, macOS, Linux için hafif bir masaüstü uygulaması olarak paketlenebilir.
+</p>
 
-**React + Tauri** tarafıyla desteklenen, Notion'dan ilham alan bir masaüstü not alma uygulaması. Geliştirme sırasında web üzerinde çalışır ve Windows, macOS ve Linux için hafif bir masaüstü uygulaması olarak sunulur.
-
----
+<p align="center">
+  <a href="#tr">🇹🇷 Türkçe</a> • <a href="#en">🇬🇧 English</a>
+</p>
 
 ## 🚀 Özellikler
 
