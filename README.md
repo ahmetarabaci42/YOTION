@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Yotion
 
 A Notion-inspired, React + Tauri powered modern desktop application. Works both as a web app and a desktop client, styled with a custom Notion-like theme.
@@ -68,3 +69,12 @@ Each language includes a **name**, **code**, and **flag emoji** so you can bette
 )
 ![Add Language Form](<img width="1423" height="420" alt="image" src="https://github.com/user-attachments/assets/872e7ec5-2996-4894-af36-ea1de0ba9150" />
 )
+=======
+# Tauri + Vanilla TS
+
+This template should help get you started developing with Tauri in vanilla HTML, CSS and Typescript.
+
+## Recommended IDE Setup
+
+- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+>>>>>>> 4918037 (first commit - local files)
