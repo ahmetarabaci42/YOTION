@@ -39,3 +39,4 @@ target
 
 # JetBrains IDEs (RustRover, etc.)
 # .idea/
+.env
