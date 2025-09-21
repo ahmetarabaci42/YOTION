@@ -186,3 +186,45 @@ pub struct FlashcardReviewRequest {
     pub flashcard_id: i64,
     pub quality: i32, // 0-5 rating
 }
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct PersonalAccount {
+    pub id: i64,
+    pub title: String,
+    pub email: String,
+    pub password: String,
+    pub website: Option<String>,
+    pub notes: Option<String>,
+    pub category: String, // email, social, banking, work, etc.
+    pub created_at: String,
+    pub updated_at: String,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct PersonalInfo {
+    pub id: i64,
+    pub title: String,
+    pub content: String,
+    pub category: String, // identity, documents, contacts, etc.
+    pub is_sensitive: bool,
+    pub created_at: String,
+    pub updated_at: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CreatePersonalAccountRequest {
+    pub title: String,
+    pub email: String,
+    pub password: String,
+    pub website: Option<String>,
+    pub notes: Option<String>,
+    pub category: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CreatePersonalInfoRequest {
+    pub title: String,
+    pub content: String,
+    pub category: String,
+    pub is_sensitive: bool,
+}

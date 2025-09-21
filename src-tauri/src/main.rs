@@ -35,6 +35,12 @@ fn main() {
             commands::get_events_by_date,
             commands::create_note,
             commands::get_notes_by_date,
+            commands::create_personal_account,
+            commands::get_personal_accounts,
+            commands::get_personal_accounts_by_category,
+            commands::create_personal_info,
+            commands::get_personal_info,
+            commands::get_personal_info_by_category,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

@@ -240,3 +240,64 @@ export const createNote = async (data: {
 export const getNotesByDate = async (date: string): Promise<Note[]> => {
   return await invoke('get_notes_by_date', { date });
 };
+
+// Personal Vault interfaces
+export interface PersonalAccount {
+  id: number;
+  title: string;
+  email: string;
+  password: string;
+  website?: string;
+  notes?: string;
+  category: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface PersonalInfo {
+  id: number;
+  title: string;
+  content: string;
+  category: string;
+  is_sensitive: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+// Personal Account API
+export const createPersonalAccount = async (data: {
+  title: string;
+  email: string;
+  password: string;
+  website?: string;
+  notes?: string;
+  category: string;
+}): Promise<PersonalAccount> => {
+  return await invoke('create_personal_account', { req: data });
+};
+
+export const getPersonalAccounts = async (): Promise<PersonalAccount[]> => {
+  return await invoke('get_personal_accounts');
+};
+
+export const getPersonalAccountsByCategory = async (category: string): Promise<PersonalAccount[]> => {
+  return await invoke('get_personal_accounts_by_category', { category });
+};
+
+// Personal Info API
+export const createPersonalInfo = async (data: {
+  title: string;
+  content: string;
+  category: string;
+  is_sensitive: boolean;
+}): Promise<PersonalInfo> => {
+  return await invoke('create_personal_info', { req: data });
+};
+
+export const getPersonalInfo = async (): Promise<PersonalInfo[]> => {
+  return await invoke('get_personal_info');
+};
+
+export const getPersonalInfoByCategory = async (category: string): Promise<PersonalInfo[]> => {
+  return await invoke('get_personal_info_by_category', { category });
+};

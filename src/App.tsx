@@ -3,8 +3,9 @@ import LanguagePage from './pages/LanguagePage';
 import TechNotesPage from './pages/TechNotesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import PlannerPage from './pages/PlannerPage';
+import PersonalVaultPage from './pages/PersonalVaultPage';
 
-export type Page = 'language' | 'tech' | 'projects' | 'planner';
+export type Page = 'language' | 'tech' | 'projects' | 'planner' | 'vault';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('language');
@@ -19,6 +20,8 @@ function App() {
         return <ProjectsPage />;
       case 'planner':
         return <PlannerPage />;
+      case 'vault':
+        return <PersonalVaultPage />;
       default:
         return <LanguagePage />;
     }
@@ -78,6 +81,17 @@ function App() {
                 <span>Planner</span>
               </button>
             </li>
+            <li>
+              <button
+                onClick={() => setCurrentPage('vault')}
+                className={`sidebar-item w-full text-left ${
+                  currentPage === 'vault' ? 'active' : ''
+                }`}
+              >
+                <span className="mr-3 text-lg">🔐</span>
+                <span>Personal Vault</span>
+              </button>
+            </li>
           </ul>
         </nav>
         
@@ -96,6 +110,7 @@ function App() {
               {currentPage === 'tech' && 'Tech Notes'}
               {currentPage === 'projects' && 'Projects'}
               {currentPage === 'planner' && 'Planner'}
+              {currentPage === 'vault' && 'Personal Vault'}
             </h2>
             
             {renderPage()}

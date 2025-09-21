@@ -161,3 +161,45 @@ pub fn get_notes_by_date(
 pub fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
+
+#[tauri::command]
+pub fn create_personal_account(
+    db: State<'_, Database>,
+    req: CreatePersonalAccountRequest,
+) -> Result<PersonalAccount, String> {
+    db.create_personal_account(req).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn get_personal_accounts(db: State<'_, Database>) -> Result<Vec<PersonalAccount>, String> {
+    db.get_personal_accounts().map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn get_personal_accounts_by_category(
+    db: State<'_, Database>,
+    category: String,
+) -> Result<Vec<PersonalAccount>, String> {
+    db.get_personal_accounts_by_category(&category).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn create_personal_info(
+    db: State<'_, Database>,
+    req: CreatePersonalInfoRequest,
+) -> Result<PersonalInfo, String> {
+    db.create_personal_info(req).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn get_personal_info(db: State<'_, Database>) -> Result<Vec<PersonalInfo>, String> {
+    db.get_personal_info().map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn get_personal_info_by_category(
+    db: State<'_, Database>,
+    category: String,
+) -> Result<Vec<PersonalInfo>, String> {
+    db.get_personal_info_by_category(&category).map_err(|e| e.to_string())
+}
