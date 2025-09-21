@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/api/tauri.ts","./src/pages/languagepage.tsx","./src/pages/plannerpage.tsx","./src/pages/projectspage.tsx","./src/pages/technotespage.tsx"],"version":"5.6.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/api/tauri.ts","./src/pages/LanguagePage.tsx","./src/pages/PersonalVaultPage.tsx","./src/pages/PlannerPage.tsx","./src/pages/ProjectsPage.tsx","./src/pages/TechNotesPage.tsx"],"errors":true,"version":"5.6.3"}
