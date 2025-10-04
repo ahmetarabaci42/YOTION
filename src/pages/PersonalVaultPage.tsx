@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  PersonalAccount, 
-  PersonalInfo, 
-  createPersonalAccount, 
+import {
+  PersonalAccount,
+  PersonalInfo,
+  createPersonalAccount,
   getPersonalAccounts,
   getPersonalAccountsByCategory,
   createPersonalInfo,
-  getPersonalInfo,
-  getPersonalInfoByCategory
+  getPersonalInfo
 } from '../api/tauri';
 
 const PersonalVaultPage: React.FC = () => {

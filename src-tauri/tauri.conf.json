@@ -15,11 +15,16 @@
       {
         "title": "YOTION",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minWidth": 600,
+        "minHeight": 400,
+        "center": true
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' ipc: https://tauri.localhost",
+      "freezePrototype": true,
+      "dangerousDisableAssetCspModification": false
     }
   },
   "bundle": {
