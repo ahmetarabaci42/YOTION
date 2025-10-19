@@ -1,18 +1,18 @@
 use crate::models::*;
 use crate::db::Database;
-use crate::validation::Validator;
+use crate::validation::*;
 use anyhow::Result;
 use chrono::Utc;
 
 impl Database {
     pub fn create_tech_space(&self, req: CreateTechSpaceRequest) -> Result<TechSpace> {
-        Validator::validate_not_empty(&req.name, "Tech space name")?;
-        Validator::validate_string_length(&req.name, "Tech space name", 1, 100)?;
-        Validator::validate_not_empty(&req.icon, "Icon")?;
+validate_not_empty(&req.name, "Tech space name")?;
+validate_string_length(&req.name, "Tech space name", 1, 100)?;
+validate_not_empty(&req.icon, "Icon")?;
 
-        let name = Validator::sanitize_string(req.name);
-        let description = Validator::sanitize_optional_string(req.description);
-        let icon = Validator::sanitize_string(req.icon);
+        let name = sanitize_string(req.name);
+        let description = sanitize_optional_string(req.description);
+        let icon = sanitize_string(req.icon);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -58,16 +58,16 @@ impl Database {
     }
 
     pub fn create_code_snippet(&self, req: CreateCodeSnippetRequest) -> Result<CodeSnippet> {
-        Validator::validate_not_empty(&req.title, "Title")?;
-        Validator::validate_string_length(&req.title, "Title", 1, 200)?;
-        Validator::validate_not_empty(&req.code, "Code")?;
-        Validator::validate_not_empty(&req.language, "Language")?;
+validate_not_empty(&req.title, "Title")?;
+validate_string_length(&req.title, "Title", 1, 200)?;
+validate_not_empty(&req.code, "Code")?;
+validate_not_empty(&req.language, "Language")?;
 
-        let title = Validator::sanitize_string(req.title);
-        let description = Validator::sanitize_optional_string(req.description);
+        let title = sanitize_string(req.title);
+        let description = sanitize_optional_string(req.description);
         let code = req.code;
-        let language = Validator::sanitize_string(req.language);
-        let tags = Validator::sanitize_optional_string(req.tags);
+        let language = sanitize_string(req.language);
+        let tags = sanitize_optional_string(req.tags);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();

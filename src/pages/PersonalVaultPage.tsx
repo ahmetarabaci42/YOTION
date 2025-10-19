@@ -38,7 +38,7 @@ const PersonalVaultPage: React.FC = () => {
     { value: 'email', label: 'Email', icon: '📧' },
     { value: 'social', label: 'Social Media', icon: '📱' },
     { value: 'banking', label: 'Banking', icon: '🏦' },
-    { value: 'work', label: 'Work', icon: '💼' },
+    //{ value: 'work', label: 'Work', icon: '💼' },
     { value: 'shopping', label: 'Shopping', icon: '🛒' },
     { value: 'entertainment', label: 'Entertainment', icon: '🎬' },
     { value: 'other', label: 'Other', icon: '📝' }

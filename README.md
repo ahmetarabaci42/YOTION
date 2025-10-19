@@ -21,6 +21,11 @@
 * 🎨 **Tailwind CSS** with a Notion‑like theme (custom colors & system fonts)
 * 🖥️ **Tauri integration** for multi‑platform desktop builds
 * 📝 **Monaco Editor** support for rich code/text editing
+* 🔐 **Personal Vault** for secure storage of passwords and sensitive data
+* 🌐 **Language Learning** with vocabulary management and flashcards
+* 📝 **Tech Notes** for organizing code snippets and technical knowledge
+* 📂 **Project Management** with tasks and progress tracking
+* 🗓️ **Planner** with events and daily notes
 
 ---
 
@@ -225,6 +230,29 @@ You can provide a **title**, **description**, choose **status**, **priority**, a
 
 
 
+## 🔐 Personal Vault Section
+
+The **Personal Vault** is a secure storage system for your sensitive information.  
+It allows you to safely store passwords, personal accounts, and other confidential data with encryption.
+
+---
+
+### Personal Accounts
+This section lets you store login credentials for various services.  
+Each account entry includes **title**, **email**, **password**, **website**, **notes**, and **category** for better organization.
+
+### Personal Information
+Store any sensitive personal information that you want to keep secure.  
+You can mark information as sensitive to enable encryption, or keep it as plain text for quick access.
+
+### Security Features
+- **Encryption**: Sensitive data is encrypted using AES encryption
+- **Categories**: Organize your data with custom categories
+- **Search**: Quickly find specific accounts or information
+- **Local Storage**: All data is stored locally on your device
+
+---
+
 ## 🗓️ Planner Section
 
 This module works like a simple calendar where you can create events and daily notes for specific dates.  
@@ -296,7 +324,12 @@ You can add a **title**, **content**, and optional **tags** to organize your not
 * ⚡  Hızlı DX için **Vite + React + TypeScript**
 * 🎨  Notion benzeri tema (özel renkler ve sistem yazı tipleri) ile **Tailwind CSS**
 * 🖥️  Çoklu platform masaüstü yapıları için **Tauri entegrasyonu**
-*  📝 Zengin kod/metin düzenleme için **Monaco Editor** desteği
+* 📝 Zengin kod/metin düzenleme için **Monaco Editor** desteği
+* 🔐 Şifreler ve hassas veriler için güvenli depolama **Kişisel Kasa**
+* 🌐 Kelime yönetimi ve flashcard ile **Dil Öğrenme**
+* 📝 Kod parçacıkları ve teknik bilgi düzenleme için **Teknik Notlar**
+* 📂 Görevler ve ilerleme takibi ile **Proje Yönetimi**
+* 🗓️ Etkinlikler ve günlük notlar ile **Planlayıcı**
 
 ---
 
@@ -501,6 +534,29 @@ Bir **başlık**, **açıklama** girebilir, **durum**, **öncelik** ve **son tar
 <img width="557" height="641" alt="Projects4" src="https://github.com/user-attachments/assets/f2a23abd-4e31-4314-9fb2-864baf568808" />
 
 
+
+## 🔐 Kişisel Kasa Bölümü
+
+**Kişisel Kasa**, hassas bilgileriniz için güvenli bir depolama sistemidir.  
+Şifreler, kişisel hesaplar ve diğer gizli verilerinizi şifreleme ile güvenle saklamanıza olanak tanır.
+
+---
+
+### Kişisel Hesaplar
+Bu bölüm, çeşitli hizmetler için giriş bilgilerinizi saklamanıza olanak tanır.  
+Her hesap girişi, daha iyi organizasyon için **başlık**, **e-posta**, **şifre**, **web sitesi**, **notlar** ve **kategori** bilgilerini içerir.
+
+### Kişisel Bilgiler
+Güvende tutmak istediğiniz herhangi bir hassas kişisel bilgiyi saklayın.  
+Bilgileri hassas olarak işaretleyerek şifrelemeyi etkinleştirebilir veya hızlı erişim için düz metin olarak tutabilirsiniz.
+
+### Güvenlik Özellikleri
+- **Şifreleme**: Hassas veriler AES şifreleme kullanılarak şifrelenir
+- **Kategoriler**: Verilerinizi özel kategorilerle düzenleyin
+- **Arama**: Belirli hesapları veya bilgileri hızlıca bulun
+- **Yerel Depolama**: Tüm veriler cihazınızda yerel olarak saklanır
+
+---
 
 ## 🗓️ Planlayıcı Bölümü
 

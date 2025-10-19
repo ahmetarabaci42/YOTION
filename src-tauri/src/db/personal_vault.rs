@@ -1,23 +1,23 @@
 use crate::models::*;
 use crate::db::Database;
-use crate::validation::Validator;
-use crate::encryption::EncryptedData;
+use crate::validation::*;
+use crate::encryption::encrypt_sensitive_data;
 use anyhow::Result;
 use chrono::Utc;
 
 impl Database {
     pub fn create_personal_account(&self, req: CreatePersonalAccountRequest) -> Result<PersonalAccount> {
-        Validator::validate_not_empty(&req.title, "Account title")?;
-        Validator::validate_string_length(&req.title, "Account title", 1, 200)?;
-        Validator::validate_email(&req.email)?;
-        Validator::validate_not_empty(&req.password, "Password")?;
+        validate_not_empty(&req.title, "Account title")?;
+        validate_string_length(&req.title, "Account title", 1, 200)?;
+        validate_email(&req.email)?;
+        validate_not_empty(&req.password, "Password")?;
 
-        let title = Validator::sanitize_string(req.title);
-        let email = Validator::sanitize_string(req.email);
-        let encrypted_password = EncryptedData::new(&req.password)?;
-        let website = Validator::sanitize_optional_string(req.website);
-        let notes = Validator::sanitize_optional_string(req.notes);
-        let category = Validator::sanitize_string(req.category);
+        let title = sanitize_string(req.title);
+        let email = sanitize_string(req.email);
+        let encrypted_password = encrypt_sensitive_data(&req.password)?;
+        let website = sanitize_optional_string(req.website);
+        let notes = sanitize_optional_string(req.notes);
+        let category = sanitize_string(req.category);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -102,17 +102,17 @@ impl Database {
     }
 
     pub fn create_personal_info(&self, req: CreatePersonalInfoRequest) -> Result<PersonalInfo> {
-        Validator::validate_not_empty(&req.title, "Info title")?;
-        Validator::validate_string_length(&req.title, "Info title", 1, 200)?;
-        Validator::validate_not_empty(&req.content, "Content")?;
+        validate_not_empty(&req.title, "Info title")?;
+        validate_string_length(&req.title, "Info title", 1, 200)?;
+        validate_not_empty(&req.content, "Content")?;
 
-        let title = Validator::sanitize_string(req.title);
+        let title = sanitize_string(req.title);
         let content = if req.is_sensitive {
-            EncryptedData::new(&req.content)?.to_string()
+            encrypt_sensitive_data(&req.content)?
         } else {
             req.content
         };
-        let category = Validator::sanitize_string(req.category);
+        let category = sanitize_string(req.category);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();

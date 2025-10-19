@@ -1,21 +1,21 @@
 use crate::models::*;
 use crate::db::Database;
-use crate::validation::Validator;
+use crate::validation::*;
 use anyhow::Result;
 use chrono::Utc;
 
 impl Database {
     pub fn create_vocabulary(&self, req: CreateVocabularyRequest) -> Result<Vocabulary> {
-        Validator::validate_not_empty(&req.word, "Word")?;
-        Validator::validate_string_length(&req.word, "Word", 1, 200)?;
-        Validator::validate_not_empty(&req.translation, "Translation")?;
-        Validator::validate_string_length(&req.translation, "Translation", 1, 500)?;
-        Validator::validate_difficulty_level(req.difficulty_level)?;
+validate_not_empty(&req.word, "Word")?;
+validate_string_length(&req.word, "Word", 1, 200)?;
+validate_not_empty(&req.translation, "Translation")?;
+validate_string_length(&req.translation, "Translation", 1, 500)?;
+validate_difficulty_level(req.difficulty_level)?;
 
-        let word = Validator::sanitize_string(req.word);
-        let translation = Validator::sanitize_string(req.translation);
-        let pronunciation = Validator::sanitize_optional_string(req.pronunciation);
-        let example_sentence = Validator::sanitize_optional_string(req.example_sentence);
+        let word = sanitize_string(req.word);
+        let translation = sanitize_string(req.translation);
+        let pronunciation = sanitize_optional_string(req.pronunciation);
+        let example_sentence = sanitize_optional_string(req.example_sentence);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -124,7 +124,7 @@ impl Database {
     }
 
     pub fn review_flashcard(&self, req: FlashcardReviewRequest) -> Result<()> {
-        Validator::validate_quality_rating(req.quality)?;
+validate_quality_rating(req.quality)?;
 
         let conn = self.conn.lock().unwrap();
 

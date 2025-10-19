@@ -2,13 +2,13 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 mod models;
-mod db;
+mod database;
 mod commands;
 mod validation;
 mod encryption;
 mod errors;
 
-use db::Database;
+use database::Database;
 
 fn main() {
     let db = Database::new().expect("Failed to initialize database");

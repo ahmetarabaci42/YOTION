@@ -1,27 +1,27 @@
 use crate::models::*;
 use crate::db::Database;
-use crate::validation::Validator;
+use crate::validation::*;
 use anyhow::Result;
 use chrono::Utc;
 
 impl Database {
     pub fn create_project(&self, req: CreateProjectRequest) -> Result<Project> {
-        Validator::validate_not_empty(&req.name, "Project name")?;
-        Validator::validate_string_length(&req.name, "Project name", 1, 200)?;
-        Validator::validate_status(&req.status, &["active", "completed", "on_hold", "cancelled"])?;
-        Validator::validate_priority(&req.priority)?;
+validate_not_empty(&req.name, "Project name")?;
+validate_string_length(&req.name, "Project name", 1, 200)?;
+validate_status(&req.status, &["active", "completed", "on_hold", "cancelled"])?;
+validate_priority(&req.priority)?;
 
         if let Some(ref start_date) = req.start_date {
-            Validator::validate_date_format(start_date)?;
+validate_date_format(start_date)?;
         }
         if let Some(ref end_date) = req.end_date {
-            Validator::validate_date_format(end_date)?;
+validate_date_format(end_date)?;
         }
 
-        let name = Validator::sanitize_string(req.name);
-        let description = Validator::sanitize_optional_string(req.description);
-        let status = Validator::sanitize_string(req.status);
-        let priority = Validator::sanitize_string(req.priority);
+        let name = sanitize_string(req.name);
+        let description = sanitize_optional_string(req.description);
+        let status = sanitize_string(req.status);
+        let priority = sanitize_string(req.priority);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -77,19 +77,19 @@ impl Database {
     }
 
     pub fn create_task(&self, req: CreateTaskRequest) -> Result<Task> {
-        Validator::validate_not_empty(&req.title, "Task title")?;
-        Validator::validate_string_length(&req.title, "Task title", 1, 200)?;
-        Validator::validate_status(&req.status, &["todo", "in_progress", "completed", "blocked"])?;
-        Validator::validate_priority(&req.priority)?;
+validate_not_empty(&req.title, "Task title")?;
+validate_string_length(&req.title, "Task title", 1, 200)?;
+validate_status(&req.status, &["todo", "in_progress", "completed", "blocked"])?;
+validate_priority(&req.priority)?;
 
         if let Some(ref due_date) = req.due_date {
-            Validator::validate_date_format(due_date)?;
+validate_date_format(due_date)?;
         }
 
-        let title = Validator::sanitize_string(req.title);
-        let description = Validator::sanitize_optional_string(req.description);
-        let status = Validator::sanitize_string(req.status);
-        let priority = Validator::sanitize_string(req.priority);
+        let title = sanitize_string(req.title);
+        let description = sanitize_optional_string(req.description);
+        let status = sanitize_string(req.status);
+        let priority = sanitize_string(req.priority);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -147,7 +147,7 @@ impl Database {
     }
 
     pub fn update_task_status(&self, task_id: i64, status: &str) -> Result<()> {
-        Validator::validate_status(status, &["todo", "in_progress", "completed", "blocked"])?;
+validate_status(status, &["todo", "in_progress", "completed", "blocked"])?;
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
