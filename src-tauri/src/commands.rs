@@ -203,3 +203,21 @@ pub fn get_personal_info_by_category(
 ) -> Result<Vec<PersonalInfo>, String> {
     db.get_personal_info_by_category(&category).map_err(|e| e.to_string())
 }
+
+#[tauri::command]
+pub fn search_vocabulary(
+    db: State<'_, Database>,
+    query: String,
+    limit: Option<i64>,
+) -> Result<Vec<Vocabulary>, String> {
+    let limit = limit.unwrap_or(50);
+    db.search_vocabulary(&query, limit).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn delete_language(
+    db: State<'_, Database>,
+    id: i64,
+) -> Result<(), String> {
+    db.delete_language(id).map_err(|e| e.to_string())
+}

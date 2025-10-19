@@ -1,20 +1,20 @@
 use crate::models::*;
 use crate::db::Database;
-use crate::validation::Validator;
+use crate::validation::*;
 use anyhow::Result;
 use chrono::Utc;
 
 impl Database {
     pub fn create_event(&self, req: CreateEventRequest) -> Result<Event> {
-        Validator::validate_not_empty(&req.title, "Event title")?;
-        Validator::validate_string_length(&req.title, "Event title", 1, 200)?;
-        Validator::validate_date_format(&req.event_date)?;
-        Validator::validate_priority(&req.priority)?;
+validate_not_empty(&req.title, "Event title")?;
+validate_string_length(&req.title, "Event title", 1, 200)?;
+validate_date_format(&req.event_date)?;
+validate_priority(&req.priority)?;
 
-        let title = Validator::sanitize_string(req.title);
-        let description = Validator::sanitize_optional_string(req.description);
-        let event_type = Validator::sanitize_string(req.event_type);
-        let priority = Validator::sanitize_string(req.priority);
+        let title = sanitize_string(req.title);
+        let description = sanitize_optional_string(req.description);
+        let event_type = sanitize_string(req.event_type);
+        let priority = sanitize_string(req.priority);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -42,7 +42,7 @@ impl Database {
     }
 
     pub fn get_events_by_date(&self, date: &str) -> Result<Vec<Event>> {
-        Validator::validate_date_format(date)?;
+validate_date_format(date)?;
 
         let conn = self.conn.lock().unwrap();
         let mut stmt = conn.prepare(
@@ -74,14 +74,14 @@ impl Database {
     }
 
     pub fn create_note(&self, req: CreateNoteRequest) -> Result<Note> {
-        Validator::validate_not_empty(&req.title, "Note title")?;
-        Validator::validate_string_length(&req.title, "Note title", 1, 200)?;
-        Validator::validate_not_empty(&req.content, "Note content")?;
-        Validator::validate_date_format(&req.note_date)?;
+validate_not_empty(&req.title, "Note title")?;
+validate_string_length(&req.title, "Note title", 1, 200)?;
+validate_not_empty(&req.content, "Note content")?;
+validate_date_format(&req.note_date)?;
 
-        let title = Validator::sanitize_string(req.title);
+        let title = sanitize_string(req.title);
         let content = req.content;
-        let tags = Validator::sanitize_optional_string(req.tags);
+        let tags = sanitize_optional_string(req.tags);
 
         let conn = self.conn.lock().unwrap();
         let now = Utc::now().to_rfc3339();
@@ -106,7 +106,7 @@ impl Database {
     }
 
     pub fn get_notes_by_date(&self, date: &str) -> Result<Vec<Note>> {
-        Validator::validate_date_format(date)?;
+validate_date_format(date)?;
 
         let conn = self.conn.lock().unwrap();
         let mut stmt = conn.prepare(

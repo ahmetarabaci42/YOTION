@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS tech_folders (
 -- Code snippets
 CREATE TABLE IF NOT EXISTS code_snippets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    folder_id INTEGER NOT NULL,
+    tech_space_id INTEGER NOT NULL,
     title TEXT NOT NULL,
     description TEXT,
     code TEXT NOT NULL,
@@ -65,82 +65,89 @@ CREATE TABLE IF NOT EXISTS code_snippets (
     tags TEXT,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL,
-    FOREIGN KEY (folder_id) REFERENCES tech_folders(id) ON DELETE CASCADE
+    FOREIGN KEY (tech_space_id) REFERENCES tech_spaces(id) ON DELETE CASCADE
 );
 
 -- Projects
 CREATE TABLE IF NOT EXISTS projects (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    description TEXT,
+    status TEXT NOT NULL DEFAULT 'active',
+    priority TEXT NOT NULL DEFAULT 'medium',
+    start_date TEXT,
+    end_date TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+-- Tasks
+CREATE TABLE IF NOT EXISTS tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_id INTEGER NOT NULL,
     title TEXT NOT NULL,
     description TEXT,
-    status TEXT NOT NULL DEFAULT 'planning',
+    status TEXT NOT NULL DEFAULT 'todo',
     priority TEXT NOT NULL DEFAULT 'medium',
-    requirements TEXT,
+    due_date TEXT,
+    completed_at TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
+);
+
+-- Events
+CREATE TABLE IF NOT EXISTS events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT,
+    event_date TEXT NOT NULL,
+    start_time TEXT,
+    end_time TEXT,
+    event_type TEXT NOT NULL DEFAULT 'meeting',
+    priority TEXT NOT NULL DEFAULT 'medium',
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+-- Notes
+CREATE TABLE IF NOT EXISTS notes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    note_date TEXT NOT NULL,
+    tags TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+-- Personal Accounts
+CREATE TABLE IF NOT EXISTS personal_accounts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL,
+    website TEXT,
     notes TEXT,
+    category TEXT NOT NULL,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
 );
 
--- Daily plans
-CREATE TABLE IF NOT EXISTS daily_plans (
+-- Personal Info
+CREATE TABLE IF NOT EXISTS personal_info (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    date TEXT NOT NULL UNIQUE,
-    tasks TEXT NOT NULL,
-    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    category TEXT NOT NULL,
+    is_sensitive BOOLEAN NOT NULL DEFAULT FALSE,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
 );
 
--- Weekly plans
-CREATE TABLE IF NOT EXISTS weekly_plans (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    week_start TEXT NOT NULL UNIQUE,
-    goals TEXT NOT NULL,
-    completed BOOLEAN NOT NULL DEFAULT FALSE,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL
-);
-
--- Create FTS5 virtual tables for full-text search
-CREATE VIRTUAL TABLE IF NOT EXISTS vocabulary_fts USING fts5(
-    word, translation, example_sentence,
-    content='vocabulary',
-    content_rowid='id'
-);
-
-CREATE VIRTUAL TABLE IF NOT EXISTS code_snippets_fts USING fts5(
-    title, description, code, tags,
-    content='code_snippets',
-    content_rowid='id'
-);
-
--- Triggers to keep FTS tables in sync
-CREATE TRIGGER IF NOT EXISTS vocabulary_fts_insert AFTER INSERT ON vocabulary BEGIN
-    INSERT INTO vocabulary_fts(rowid, word, translation, example_sentence)
-    VALUES (new.id, new.word, new.translation, new.example_sentence);
-END;
-
-CREATE TRIGGER IF NOT EXISTS vocabulary_fts_delete AFTER DELETE ON vocabulary BEGIN
-    DELETE FROM vocabulary_fts WHERE rowid = old.id;
-END;
-
-CREATE TRIGGER IF NOT EXISTS vocabulary_fts_update AFTER UPDATE ON vocabulary BEGIN
-    DELETE FROM vocabulary_fts WHERE rowid = old.id;
-    INSERT INTO vocabulary_fts(rowid, word, translation, example_sentence)
-    VALUES (new.id, new.word, new.translation, new.example_sentence);
-END;
-
-CREATE TRIGGER IF NOT EXISTS code_snippets_fts_insert AFTER INSERT ON code_snippets BEGIN
-    INSERT INTO code_snippets_fts(rowid, title, description, code, tags)
-    VALUES (new.id, new.title, new.description, new.code, new.tags);
-END;
-
-CREATE TRIGGER IF NOT EXISTS code_snippets_fts_delete AFTER DELETE ON code_snippets BEGIN
-    DELETE FROM code_snippets_fts WHERE rowid = old.id;
-END;
-
-CREATE TRIGGER IF NOT EXISTS code_snippets_fts_update AFTER UPDATE ON code_snippets BEGIN
-    DELETE FROM code_snippets_fts WHERE rowid = old.id;
-    INSERT INTO code_snippets_fts(rowid, title, description, code, tags)
-    VALUES (new.id, new.title, new.description, new.code, new.tags);
-END;
+-- Create indexes for better search performance
+CREATE INDEX IF NOT EXISTS idx_vocabulary_word ON vocabulary(word);
+CREATE INDEX IF NOT EXISTS idx_vocabulary_translation ON vocabulary(translation);
+CREATE INDEX IF NOT EXISTS idx_code_snippets_title ON code_snippets(title);
+CREATE INDEX IF NOT EXISTS idx_code_snippets_language ON code_snippets(language);
+CREATE INDEX IF NOT EXISTS idx_personal_info_title ON personal_info(title);
